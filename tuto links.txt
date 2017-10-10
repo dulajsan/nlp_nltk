@@ -1,0 +1,16 @@
+http://nlpforhackers.io/named-entity-extraction/
+http://www.bogotobogo.com/python/scikit-learn/Artificial-Neural-Network-ANN-1-Introduction.php
+
+
+naive bayes
+https://www.analyticsvidhya.com/blog/2017/09/naive-bayes-explained/
+
+csv
+https://stackoverflow.com/questions/40416784/naive-bayes-classification-in-python
+
+full tuto
+https://www.packtpub.com/mapt/book/application_development/9781849513609/5
+
+
+IBM watson
+https://developer.ibm.com/recipes/tutorials/how-to-use-ibm-watson-speech-to-text-language-model-customization-service/
