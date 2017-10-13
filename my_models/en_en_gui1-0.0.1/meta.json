@@ -1,0 +1,11 @@
+{
+  "lang":"en",
+  "name":"en_gui1",
+  "license":"CC BY-NC 3.0",
+  "author":"dulaj sanjaya",
+  "url":"",
+  "version":"0.0.1",
+  "spacy_version":">=1.7.0,<2.0.0",
+  "email":"dulaj.sanjaya@ifsworld.com",
+  "description":"gui1 detection"
+}
