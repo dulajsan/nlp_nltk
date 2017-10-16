@@ -9,12 +9,13 @@ nlp = en_gui.load()
 #para='The user should be connected to a coordinator in the sites to site entity window'
 #para='Open the desired sales quotation and select the Quotation Lines tab.'
 #para= 'If the Input UoM Group check box on the line is selected'
-para='Open the desired sales quotation and select the Quotation Lines tab'
+para='Open the desired sales quotation and select the Quotation Lines tab.'
 unicodePara=unicode(para)
 
 doc = nlp(unicodePara)            # See "Using the pipeline"
 #guiElements=[(w.text,w.ent_iob,w.ent_type_) for w in doc if w.ent_type_=="GUI1" or w.ent_type_=="GUI2"]
 guiElements=[w for w in doc if w.ent_type_=="GUI1" or w.ent_type_=="GUI2"]
+#print(guiElements)
 
 i=0
 temp=[]
@@ -29,10 +30,15 @@ for t in guiElements:
 
     i+=1
 
+jsonlist=[]
 for q in formattedGui:
-    print (q)
+        strword=" ".join(str(x) for x in q)
+        print(strword)
+        guijson={"guiword":strword,"type":str(q[0].ent_type_)}
+        jsonlist.append(guijson)
 
 
+print (jsonlist)
 
 
 
