@@ -5,11 +5,11 @@ import json
 
 
 nlp = en_gui.load()
-#para='The customer should have a record in the customer window'
-#para='The user should be connected to a coordinator in the sites to site entity window'
-#para='Open the desired sales quotation and select the Quotation Lines tab.'
-#para= 'If the Input UoM Group check box on the line is selected'
-para='Open the desired sales quotation and select the Quotation Lines tab.'
+para=""" The customer should have a record in the customer window'
+The user should be connected to a coordinator in the sites to site entity window 
+Open the desired sales quotation and select the Quotation Lines tab.
+If the Input UoM Group check box on the line is selected' 
+Open the desired sales quotation and select the Quotation Lines tab. """
 unicodePara=unicode(para)
 
 doc = nlp(unicodePara)            # See "Using the pipeline"
@@ -21,19 +21,26 @@ i=0
 temp=[]
 formattedGui=[]
 temp=guiElements
+s=1;
 for t in guiElements:
+    #print(t.ent_iob)
     if t.ent_iob==3 and i!=0:
-        formattedGui.append(temp[:i])
+        formattedGui.append(temp[:s])
         temp=guiElements[i:]
+        s=1;
     elif i==len(guiElements)-1:
         formattedGui.append(temp)
+        s=1;
+    elif t.ent_iob==1:
+        s+=1;
 
     i+=1
+#print(formattedGui)
 
 jsonlist=[]
 for q in formattedGui:
         strword=" ".join(str(x) for x in q)
-        print(strword)
+        #print(strword)
         guijson={"guiword":strword,"type":str(q[0].ent_type_)}
         jsonlist.append(guijson)
 
