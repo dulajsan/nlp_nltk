@@ -77,6 +77,7 @@ train_data = [
     (u'You can see the quantity to be reserved in the Rem Qty to Res field.',
      [(47,61,"GUI2")])
 
+
 ]
 
 # def newGoldner(abc):
