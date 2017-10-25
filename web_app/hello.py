@@ -6,9 +6,9 @@ from json import dumps
 
 
 #nlp
-import en_gui #gui type 1 detection
+import en_en_gui #gui type 1 detection
 
-nlp = en_gui.load()
+nlp = en_en_gui.load()
 
 
 app = Flask(__name__)
@@ -29,7 +29,7 @@ def support_jsonp(f):
     return decorated_function
 
  
-@app.route("/display",methods=['GET'])
+@app.route("/",methods=['GET'])
 def hello():
     paragraph=request.args.get('paragra')
     #paragraph='If the Input UoM Group check box on the line is selected'
@@ -63,6 +63,8 @@ def hello():
     for q in formattedGui:
         strword=" ".join(str(x) for x in q)
         #print(strword)
+        if "/" in strword:
+            strword="".join(strword.split())
         guijson={'guiword':strword,'type':str(q[0].ent_type_)}
         jsonlist.append(guijson)
             

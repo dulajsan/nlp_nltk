@@ -1,15 +1,17 @@
-import en_gui
+import en_en_gui
 import sys
 #import simplejson as json
 import json
 
 
-nlp = en_gui.load()
+nlp = en_en_gui.load()
 para=""" The customer should have a record in the customer window'
 The user should be connected to a coordinator in the sites to site entity window 
 Open the desired sales quotation and select the Quotation Lines tab.
 If the Input UoM Group check box on the line is selected' 
-Open the desired sales quotation and select the Quotation Lines tab. """
+Open the desired sales quotation and select the Quotation Lines tab. 
+If the customer has the Receive Pack Size Charge/Discount check box selected in the Customer/Order/General tab
+"""
 unicodePara=unicode(para)
 
 doc = nlp(unicodePara)            # See "Using the pipeline"
@@ -40,7 +42,9 @@ for t in guiElements:
 jsonlist=[]
 for q in formattedGui:
         strword=" ".join(str(x) for x in q)
-        #print(strword)
+        if "/" in strword:
+            strword="".join(strword.split())
+        print(strword)
         guijson={"guiword":strword,"type":str(q[0].ent_type_)}
         jsonlist.append(guijson)
 
