@@ -7,6 +7,7 @@ import random
 model_name = 'en'
 entity_label1 = 'GUI1'
 entity_label2 = 'GUI2'
+entity_label3 = 'ACTION'
 
 #trained model state saving directory
 output_directory = 'C:/Users/dusalk/Documents/python_projects/new/nlp_nltk/data/en_gui'
@@ -75,9 +76,47 @@ train_data = [
     (u'In the line for the proper inventory location, enter the quantity that you want to reserve in the Reserve Qty field.',
      [(98,110,"GUI2")]),
     (u'You can see the quantity to be reserved in the Rem Qty to Res field.',
-     [(47,61,"GUI2")])
-
-
+     [(47,61,"GUI2")]),
+    (u'Open the Serial Parts window. You can also perform this procedure from the Serial Part window.',
+     [(75,86,"GUI1")]),
+    (u'In the Condition Code, Cond Limit Description, and Standard Value fields',
+     [(7,45,"GUI2"),(51,65,"GUI2")]),
+    (u'Click the Task Cards tab and create a new record',
+     [(10,20,"GUI1")]),
+    (u'Click the Task Cards tab and then click the Task Cards sub tab',
+     [(10,20,"GUI1"),(44,54,"GUI1")]),
+    (u'In the Task Card ID field',
+     [(7,19,"GUI2")]),
+    (u'revert to the default value by selecting the Reset Serial Base Number check box.',
+     [(45,68,"GUI2")]),
+    (u'Click OK.',
+     [(6,8,"ACTION")]),
+    (u'If needed, modify the Serial Base Number ',
+     [(22,40,"ACTION")]),
+    (u'Right-click and click Manage Serial Number Generation',
+     [(22,53,"ACTION")]),
+    (u'When serial parts are defined, the Life Limited field does not display any value',
+     [(35,53,"GUI2")]),
+    (u'Use the BP Links portlet for maintaining all links to cubes and scorecards you deal with on a regular ',
+     [(8,16,"GUI1")]),
+    (u'Open the Document Info page to get detailed information on the document',
+     [(9,22,"GUI1")]),
+    (u'Enter all required data in the Copy Parts to Site dialog box',
+     [(32,49,"GUI1")]),
+    (u'On the Navigate menu',
+     [(7,15,"GUI2")]),
+    (u'You can enter new values for the proposed schedule on the Proposed Schedule tab ',
+     [(58,75,"GUI1")]),
+    (u'the work load for the work centers can be compared on the Schedule Analysis and Load Analysis tabs',
+     [(58,75,"GUI1"),(80,93,"GUI1")]),
+    (u'Enter a description in the Quotation Desc field.',
+     [(27,41,"GUI2")]),
+    (u'enter suitable dates in the Request Receipt Date and Price Effective Date fields.',
+     [(28,48,"GUI2"),(53,73,"GUI2")]),
+    (u' Engineering parts can also be inserted in the Engineering Parts window',
+     [(46,63,"GUI1")]),
+    (u'Use the Calculate Characteristics menu option to calculate the characteristics for a part.',
+     [(8,33,"GUI2")])
 ]
 
 # def newGoldner(abc):
@@ -116,6 +155,7 @@ nlp = spacy.load(model_name)
 #add new entity type
 nlp.entity.add_label(entity_label1)
 nlp.entity.add_label(entity_label2)
+nlp.entity.add_label(entity_label3)
 
 
 ner = train_ner(nlp, train_data, output_directory)

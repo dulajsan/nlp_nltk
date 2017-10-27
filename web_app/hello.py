@@ -6,9 +6,9 @@ from json import dumps
 
 
 #nlp
-import en_en_gui #gui type 1 detection
+import en_gui #gui type 1 detection
 
-nlp = en_en_gui.load()
+nlp = en_gui.load()
 
 
 app = Flask(__name__)
@@ -27,6 +27,17 @@ def support_jsonp(f):
         else:
             return f(*args, **kwargs)
     return decorated_function
+
+
+@app.route("/writetocsv",methods=['GET'])
+def writetofile():
+    word=request.args.get('word')
+    meaning=request.args.get('meaning')
+
+    with open("C:/Users/dusalk/Documents/visual studio 2015/Projects/WordWebAddIn1/WordWebAddIn1Web/Resources/csv/abbreviations.csv","a") as fo:
+        fo.write("\n"+str(word)+","+str(meaning))
+    return '{success:true}'
+   
 
  
 @app.route("/",methods=['GET'])

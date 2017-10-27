@@ -718,7 +718,12 @@
     "GUI2",
     "GUI2",
     "GUI2",
-    "GUI2"
+    "GUI2",
+    "ACTION",
+    "ACTION",
+    "ACTION",
+    "ACTION",
+    "ACTION"
   ],
   "n_sents":0,
   "actions":{
