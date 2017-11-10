@@ -6,9 +6,9 @@ from json import dumps
 
 
 #nlp
-import en_gui #gui type 1 detection
+import en_en_gui #gui type 1 detection
 
-nlp = en_gui.load()
+nlp = en_en_gui.load()
 
 
 app = Flask(__name__)
@@ -48,7 +48,7 @@ def hello():
     #nlp
     unicodePara=unicode(paragraph)
     doc = nlp(unicodePara)  
-    guiElements=[w for w in doc if w.ent_type_=="GUI1" or w.ent_type_=="GUI2"]
+    guiElements=[w for w in doc if w.ent_type_=="GUI1" or w.ent_type_=="GUI2" or w.ent_type_=="ACTION"]
     #return jsonify({'data':guiElements})
 
     i=0

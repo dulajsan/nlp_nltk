@@ -5,18 +5,21 @@ import json
 
 
 nlp = en_en_gui.load()
-para=""" The customer should have a record in the customer window'
-The user should be connected to a coordinator in the sites to site entity window 
-Open the desired sales quotation and select the Quotation Lines tab.
-If the Input UoM Group check box on the line is selected' 
-Open the desired sales quotation and select the Quotation Lines tab. 
-If the customer has the Receive Pack Size Charge/Discount check box selected in the Customer/Order/General tab
+para="""Select for the operation for which you want to adjust a report
+In the Reports tab, select the Show Operation Reports option.
+Select the operation report you wish to adjust, right-click and click Adjust Operation Results, the Adjust Operation Result dialog will appear. 
+To adjust a quantity complete result, enter the new value in the Qty Completed field.
+To adjust a quantity scrapped result, enter the new value in the Qty Scrapped field. If the part is catch unit handled, also enter a new value in the Catch Qty Scrapped field.
+To adjust a machine result, enter the new value(s) in the Mach Setup and/or Mach Run fields. If required, also enter a new value in the Resource Share field.
+To adjust a labor result, enter the new value(s) in the Labor Setup and/or Labor Run fields. If required and if the labor is not reported against a specific employee, enter a new value in Crew Size field.
+Click OK.
 """
+
 unicodePara=unicode(para)
 
 doc = nlp(unicodePara)            # See "Using the pipeline"
 #guiElements=[(w.text,w.ent_iob,w.ent_type_) for w in doc if w.ent_type_=="GUI1" or w.ent_type_=="GUI2"]
-guiElements=[w for w in doc if w.ent_type_=="GUI1" or w.ent_type_=="GUI2"]
+guiElements=[w for w in doc if w.ent_type_=="GUI1" or w.ent_type_=="GUI2" or w.ent_type_=="ACTION"]
 #print(guiElements)
 
 i=0
