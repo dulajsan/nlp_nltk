@@ -1,18 +1,18 @@
-import en_en_gui
+import en_gui
 import sys
 #import simplejson as json
 import json
 
 
-nlp = en_en_gui.load()
-para="""Select for the operation for which you want to adjust a report
-In the Reports tab, select the Show Operation Reports option.
-Select the operation report you wish to adjust, right-click and click Adjust Operation Results, the Adjust Operation Result dialog will appear. 
-To adjust a quantity complete result, enter the new value in the Qty Completed field.
-To adjust a quantity scrapped result, enter the new value in the Qty Scrapped field. If the part is catch unit handled, also enter a new value in the Catch Qty Scrapped field.
-To adjust a machine result, enter the new value(s) in the Mach Setup and/or Mach Run fields. If required, also enter a new value in the Resource Share field.
-To adjust a labor result, enter the new value(s) in the Labor Setup and/or Labor Run fields. If required and if the labor is not reported against a specific employee, enter a new value in Crew Size field.
-Click OK.
+nlp = en_gui.load()
+para="""
+Open the Reporting Period Status window and create a new record.
+Enter a value in the Reporting Transaction Type field. The List of Values can be used to select the required value.
+Enter a value in the Balance Version field. The List of Values can be used to select the required value.
+Enter the starting reporting period in the From Year-Period field. The List of Values can be used to select the required value.
+Enter the until reporting period in the Until Year-Period field. The List of Values can be used to select the required value.
+Enter a note in the Note field if required.
+Save the information.
 """
 
 unicodePara=unicode(para)
@@ -40,7 +40,7 @@ for t in guiElements:
         s+=1;
 
     i+=1
-#print(formattedGui)
+print(formattedGui)
 
 jsonlist=[]
 for q in formattedGui:
@@ -53,6 +53,7 @@ for q in formattedGui:
 
 
 print (jsonlist)
+
 
 
 

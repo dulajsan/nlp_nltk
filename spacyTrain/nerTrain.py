@@ -6,13 +6,14 @@ from spacy.gold import GoldParse
 from spacy.tagger import Tagger
 import random
 
-model_name = 'en'
+model_name='en_core_web_sm'
+#model_name = 'en'
 entity_label1 = 'GUI1'
 entity_label2 = 'GUI2'
 entity_label3 = 'ACTION'
 
 #trained model state saving directory
-output_directory = 'C:/Users/dusalk/Documents/python_projects/new/nlp_nltk/data/en_gui'
+output_directory = 'D:/python_projects/new/nlp_nltk/data/en_gui'
 #train data by manually tagging
 train_data = [
     (u'The user should be connected to a coordinator in the sites per user window',
@@ -307,7 +308,108 @@ train_data = [
     (u'If Buffered Operations Reporting is enabled and the Adjust Schedule Due To Shop Floor Reporting check box in the Scheduling Basic Data/Shop Order Scheduling/Scheduling Server tab has been selected, at the next execution of buffered operations reporting the scheduling server will adjust the operation time due to remaining quantity and',
      [(52,95,"GUI2"),(113,174,"GUI1")]),
     (u'If Buffered Operations Reporting is enabled and the adjust schedule due to shop floor reporting check box in the scheduling basic data/shop order scheduling/scheduling server tab has been selected, at the next execution of buffered operations reporting the scheduling server will adjust the operation time due to remaining quantity and',
-     [(52,95,"GUI2"),(113,174,"GUI1")])
+     [(52,95,"GUI2"),(113,174,"GUI1")]),
+    (u'Select Actual Balances to transfer the actual balances. Click Next',
+     [(7,22,"ACTION"),(62,66,"ACTION")]),
+    (u'Select actual balances to transfer the actual balances. Click Next',
+     [(7,22,"ACTION"),(62,66,"ACTION")]),
+    (u'In the Master Company Period From field, enter starting period of the period range of the master company to which the balances should be transferred.',
+     [(7,33,"GUI2")]),
+    (u'In the master company period from field, enter starting period of the period range of the master company to which the balances should be transferred.',
+     [(7,33,"GUI2")]),
+    (u'In the Master Company Period To field, enter until period of the period range of the master company to which the balances should be transferred',
+     [(7,31,"GUI2")]),
+    (u'In the master company period to field, enter until period of the period range of the master company to which the balances should be transferred',
+     [(7,31,"GUI2")]),
+    (u'Select Finish to start the balance transfer',
+     [(7,13,"ACTION")]),
+    (u'Select finish to start the balance transfer',
+     [(7,13,"ACTION")]),
+    (u'Select Budget Balances to transfer the budget balances. Click Next.',
+     [(7,22,"ACTION"),(62,66,"ACTION")]),
+    (u'Select budget balances to transfer the budget balances. Click Next.',
+     [(7,22,"ACTION"),(62,66,"ACTION")]),
+    (u'Select the Adjust Reporting Company Profit/Loss check box if you want the Income Statement and the Balance Sheet to be automatically balanced by having new transaction rows created via GCP1 and GCP2 posting types.',
+     [(11,47,"GUI2")]),
+    (u'Select the adjust reporting company profit/loss check box if you want the Income Statement and the Balance Sheet to be automatically balanced by having new transaction rows created via GCP1 and GCP2 posting types.',
+     [(11,47,"GUI2")]),
+    (u'Open the Balance Transfer Assistant.',
+     [(9,35,"ACTION")]),
+    (u'open the balance transfer assistant.',
+     [(9,35,"ACTION")]),
+    (u'Select Business Planning Balances to transfer the business planning balances. Click Next',
+     [(7,33,"ACTION"),(84,88,"ACTION")]),
+    (u'Select business planning balances to transfer the business planning balances. Click next',
+     [(7,33,"ACTION"),(84,88,"ACTION")]),
+    (u'In the Business Plan field, enter a business plan from which the balances should be fetched. The List of Values can be used to select the relevant business plan',
+     [(7,20,"GUI2")]),
+    (u'In the business plan field, enter a business plan from which the balances should be fetched. The List of Values can be used to select the relevant business plan',
+     [(7,20,"GUI2")]),
+    (u'Select the Adjust Reporting Company Profit/Loss check box if you want the Income Statement and the Balance Sheet to be automatically ',
+     [(11,47,"GUI2")]),
+    (u'Select the adjust reporting company profit/loss check box if you want the Income Statement and the Balance Sheet to be automatically ',
+     [(11,47,"GUI2")]),
+    (u'the assistant should be opened by right-clicking on the required reporting entities in the Reporting Period Status per Reporting Entity table in the Reporting Period Status window.',
+     [(91,135,"GUI2"),(149,173,"GUI1")]),
+    (u'the assistant should be opened by right-clicking on the required reporting entities in the reporting period status per reporting entity table in the reporting period status window.',
+     [(91,135,"GUI2"),(149,173,"GUI1")]),
+    (u'Select Finish to start the balance transfer.',
+     [(7,13,"ACTION")]),
+    (u'Select finish to start the balance transfer.',
+     [(7,13,"ACTION")]),
+    (u'Open the Transfer Balance Assistant',
+     [(5,35,"ACTION")]),
+    (u'Select or unselect the Include Simulation Balances checkbox, depending on if simulation balances should be included or not in the reporting.',
+     [(23,50,"GUI2")]),
+    (u'Select or unselect the include simulation balances checkbox, depending on if simulation balances should be included or not in the reporting.',
+     [(23,50,"GUI2")]),
+    (u'Open the Reporting Period Status window and create a new record.',
+     [(9,32,"GUI1")]),
+    (u'Open the reporting period status window and create a new record.',
+     [(9,32,"GUI1")]),
+    (u'For the reporting period statuses entered with reporting transaction type Reporting and for a period range, certain reporting periods could be excluded from Exclude Periods from Balance Transfer dialog which can be accessed via Right Mouse Button option.',
+     [(157,194,"GUI1")]),
+    (u'For the reporting period statuses entered with reporting transaction type Reporting and for a period range, certain reporting periods could be excluded from exclude periods from balance transfer dialog which can be accessed via Right Mouse Button option.',
+     [(157,194,"GUI1")]),
+    (u'Open the Reporting Period Status window and search for the combination of period, reporting transaction type and balance version for which you want to remove the approval of reporting journal.',
+     [(9,33,"GUI1")]),
+    (u'Open the reporting period status window and search for the combination of period, reporting transaction type and balance version for which you want to remove the approval of reporting journal.',
+     [(9,33,"GUI1")]),
+    (u'Select the record displayed in the Reporting Period Status Details table, right-click and then click Remove Reporting Journal Approval.',
+     [(35,66,"GUI2"),(101,134,"ACTION")]),
+    (u'the assistant should be opened by right-clicking on the required reporting entities in the Reporting Period Status per Reporting Entity table in the Reporting Period Status window.',
+     [(119,135,"GUI2"),(149,172,"GUI1")]),
+    (u'The Balance Transfer Assistant can be accessed via the navigator or via the Reporting Period Status window',
+     [(76,99,"GUI1")]),
+    (u'Enter a value in the Reporting Transaction Type field. The List of Values can be used to select the required value.',
+     [(21,47,"GUI2")]),
+    (u'Enter a value in the reporting transaction type field. The List of Values can be used to select the required value',
+     [(21,47,"GUI2")]),
+    (u'Enter a value in the Balance Version field. The List of Values can be used to select the required value.',
+     [(21,36,"GUI2")]),
+    (u'Enter the until reporting period in the Until Year-Period field. The List of Values can be used to select the required value.',
+     [(40,57,"GUI2")]),
+    (u'Start the Demand Plan Server Setup Assistant dialog box and go through the steps.',
+     [(10,44,"GUI1")]),
+    (u'Start the demand plan server setup assistant dialog box and go through the steps.',
+     [(10,44,"GUI1")]),
+    (u'Remember that the assistant only creates one base flow.  So if additional flows are required, then this have to be done in the Demand Plan Server Setup Assistant/scheduling dialog box.',
+     [(127,172,"GUI1")]),
+    (u'Remember that the assistant only creates one base flow.  So if additional flows are required, then this have to be done in the demand plan server setup assistant/scheduling dialog box.',
+     [(127,172,"GUI1")]),
+    (u'Adding of scheduling information have to be done in Demand Plan Server Setup Assistant/Scheduling dialog box',
+     [(52,97,"GUI1")]),
+    (u'Adding of scheduling information have to be done in demand plan server setup assistant/scheduling dialog box',
+     [(52,97,"GUI1")]),
+    (u'To make a new demand plan server, you should open the Demand Plan Servers window and click New.',
+     [(54,73,"GUI1"),(91,94,"ACTION")]),
+    (u'To make a new demand plan server, you should open the Demand Plan Servers window and click New.',
+     [(54,73,"GUI1"),(91,94,"ACTION")]),
+    (u'Open the new Forecast Server ID field value in the Demand Plan Server Setup Assistant window and add flows, period versions and scheduling information.',
+     [(13,31,"GUI2"),(51,85,"GUI1")])
+
+
+
 
 ]
 
@@ -344,6 +446,7 @@ def train_ner(nlp, train_data, output_dir):
     nlp.save_to_directory(output_dir)
 
 nlp = spacy.load(model_name)
+#nlp = spacy.blank('en')
 #add new entity type
 nlp.entity.add_label(entity_label1)
 nlp.entity.add_label(entity_label2)
